@@ -33,8 +33,10 @@ $nav-height: 5rem;
 
     & .LeftCategory {
         display: flex;
-        justify-content: space-between;
-        width: 17%;
+        justify-content: flex-start;
+        width: 20%;
+
+        gap: 3.5rem;
 
         & .Icon:first-child {
             height: 80%;
@@ -68,6 +70,7 @@ $nav-height: 5rem;
                 display: flex;
                 justify-content: center;
                 height: 40%;
+
                 padding: .5rem;
                 border-radius: 0.3rem;
                 
@@ -77,9 +80,9 @@ $nav-height: 5rem;
                     height: 2rem;
                     width: 2rem;
         
-                    border-radius: 0.3rem;
                     cursor: pointer;
-        
+                    
+                    border-radius: 0.3rem;
                     margin-left: 0;
         
                     transition: background-color 250ms ease;
@@ -97,12 +100,12 @@ $nav-height: 5rem;
                     position: absolute;
                     content: attr(name);
     
+                    height: 3rem;
+                    width: auto;
+
                     font-size: $font-size-5;
                     font-weight: 600;
                     color: #000000;
-    
-                    height: 3rem;
-                    width: auto;
     
                     padding-inline: 1rem;
                     background-color: #fff;
@@ -159,7 +162,7 @@ $nav-height: 5rem;
 
                 font-weight: 500;
 
-                color: #a9a9a9;
+                color: $terciary-color;
             }
 
             & ul {
@@ -194,7 +197,8 @@ $nav-height: 5rem;
         position: relative;
 
         height: 100%;
-        width: 25%;
+        width: 20%;
+
 
         & .DropDown {
             display: flex;
@@ -309,6 +313,11 @@ $nav-height: 5rem;
 
                         padding-inline: 0.8rem;
                     }
+
+                    &::placeholder {
+                        color: $text-subcolor;
+                        font-weight: 700;
+                    }
                 }
         
                 & .SearchContainer {
@@ -362,6 +371,7 @@ $nav-height: 5rem;
             cursor: pointer;
             
             transition: background-color 100ms ease;
+
             &:hover {
                 background-color: $terciary-color;
             }
@@ -387,11 +397,11 @@ $nav-height: 5rem;
 
                 transform: translateY(50%) scale(0, 0);
 
-                transition: transform 250ms ease 150ms;
+                transition: transform 250ms ease;
               }
 
-            &:hover::after {
-                transform: translateY(110%) scale(1);
+              &:hover::after {
+                  transform: translateY(110%)  scale(1, 1);
               }
         }
         
@@ -434,6 +444,131 @@ $nav-height: 5rem;
     
             height: 60%;
             border-radius: 50%;
+        }
+
+
+        & .Dialog {
+            position: absolute;
+            z-index: 100;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            width: 40rem;
+            height: 0;
+            background-color: $primary-color;
+            border-radius: .5rem;
+
+            clip-path: inset(0);
+
+            transform: translate(-47%, 2.5rem);
+
+            transition: height 450ms;
+            transition-timing-function: ease;
+            &.open {
+                height: calc(100vh - 5rem);
+            }
+
+            & .head {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+
+                width: 100%;
+                height: 5rem;
+
+                padding-left: auto;
+                margin: 0;
+                box-shadow: 0 0 0.5rem black;
+
+                & h1 {
+                    font-size: calc($font-size-5 + 0.1rem);
+                    font-weight: 600;
+                    color: $text;
+
+                    text-align: center;
+                    width: 80%;
+                }
+                & .Icon {
+                    width: 2rem;
+                    height: 2rem;
+                    border-radius: 0.3rem;
+
+                    padding: .5rem;
+                    margin-right: 1rem;
+
+                    &:hover {
+                        background-color: $terciary-color;
+                    }
+                }
+            }
+
+
+            & .primeLootContainer {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                height: 92.2%;
+                width: 100%;
+                overflow-y: scroll;
+
+                & .lootContainer {
+                    height: 38rem;
+                    width: 95%;
+    
+                    box-sizing: border-box;
+    
+                    border-bottom: 0.1rem solid $search-bar;
+                    padding-inline: 2.5rem;
+
+                    & h1 {
+                        font-weight: 600;
+                        margin-top: 2rem;
+                    }
+
+                    & h5,
+                    & h3 {
+                        color: $text-subcolor;
+                        font-size: $font-size-5;
+                        font-weight: 400;
+
+                        margin: 0;
+                    }
+
+                    & h3 {
+                        color: $text;
+                        font-size: calc( $font-size-5 + .05rem );
+                    }
+
+                    & h5 {
+                        margin-bottom: 2rem;
+                    }
+                    & .FreeTrial {
+                        width: 100%;
+                        height: 3rem;
+
+                        background-color: $purple-color;
+                        color: $text;
+                        font-size: $font-size-5;
+                        font-weight: 600;
+
+                        cursor: pointer;
+
+                        border: none;
+                        border-radius: 0.4rem;
+                        margin-bottom: 2rem;
+
+                        transition: background-color 150ms ease;
+
+                        &:hover {
+                            background-color: #772ce8;
+                        }
+                    }
+                }
+            }
         }
     }
 

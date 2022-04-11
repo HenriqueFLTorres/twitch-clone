@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import ViewMore from '../../public/data/ViewMore.json'
+
 import TwitchLogo from "../../public/svg/TwitchLogo.js"
 import MoreOptions from "../../public/svg/MoreOptions.js"
 
@@ -19,19 +21,9 @@ const LeftCategory = () => {
         </div>
         <div className={classNames( styles.moreOptions, { [styles.active]: moreOptions })}>
             <h3>GENERAL</h3>
-            <ul>About</ul>
-            <ul>Advertisers</ul>
-            <ul>Blog</ul>
-            <ul>Developers</ul>
-            <ul>Download Apps</ul>
-            <ul>Gift Card</ul>
-            <ul>IGBD</ul>
-            <ul>Jobs</ul>
-            <ul>Loot Cave - Merch Store</ul>
-            <ul>Music on Twitch</ul>
-            <ul>Partners</ul>
-            <ul>Press</ul>
-            <ul>Turbo</ul>
+
+            { ViewMore.map((item, index) => <ul key={index}>{item}</ul>) }
+            
         </div>
     </div>
   )

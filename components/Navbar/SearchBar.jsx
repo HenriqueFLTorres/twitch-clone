@@ -9,7 +9,7 @@ import classNames from 'classnames'
 
 const SearchBar = () => {
     const [search, setSearch] = useState()
-    const [dropDown, setDropDown] = useState(true)
+    const [dropDown, setDropDown] = useState(false)
 
 
   return (
