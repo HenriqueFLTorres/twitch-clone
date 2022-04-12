@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import PrimeLoot from '../../public/data/PrimeLoot.json'
+import NotificationsData from '../../public/data/NotificationsData.json'
 
 import Loots from '../../public/svg/Loots.js'
 import Notifications from '../../public/svg/Notifications.js'
@@ -17,8 +18,6 @@ import Image from 'next/image'
 const RightCategory = () => {
     const [windowOpened, setWindowOpened] = useState()
     const [notificationsTab, setNotificationsTab] = useState("Twitch")
-
-    console.log(notificationsTab);
 
     const iconContainerClass = (name) => classNames( styles.IconContainer,   { [styles.open]: windowOpened === name } )
 
@@ -62,23 +61,29 @@ const RightCategory = () => {
                         </div>
                         <div className={styles.switchTab}>
                             <div className={styles.tabText}>
-                                <p classNames={ classNames( [styles.text], { [styles.Active]: notificationsTab === "Twitch" } )} onClick={() => setNotificationsTab("Twitch")}>
+                                <p className={ classNames( [styles.text], { [styles.Active]: notificationsTab === "Twitch" } )} onClick={() => setNotificationsTab("Twitch")}>
                                     My Twitch (27)
                                 </p>
-                                <p classNames={ classNames( [styles.text], { [styles.Active]: notificationsTab === "Twitch" } )} onClick={() => setNotificationsTab("Channel")}>
+                                <p className={ classNames( [styles.text], { [styles.Active]: notificationsTab === "Channel" } )} onClick={() => setNotificationsTab("Channel")}>
                                     My Channel (12)
                                 </p>
                             </div>
-                            {/* <div className={styles.tabBorder}></div> */}
+                            <div className={ classNames( [styles.tabBorder], { [styles.tabBorderTwo]: notificationsTab === "Channel" } )}></div>
                         </div>
                         <div className={styles.mainNotificationsContainer}>
-                            {/* { PrimeLoot.map((item) => {
-                                const { title, image, description, subDescription } = item
+                            <p className={styles.mostRecent}>MOST RECENT</p>
+                            { NotificationsData.map((item, index) => {
+                                const { image, description, time } = item
                                 return (
-                                    <div className={styles.notificationsContainer}>
+                                    <div className={styles.notificationsContainer} key={index}>
+                                        <img src={image} alt="" />
+                                        <div className={styles.Description}>
+                                            <h5>{description}</h5>
+                                            <p>{time}</p>
+                                        </div>
                                     </div>
                                 )
-                            }) } */}
+                            }) }
                         </div>
                     </div>
 
