@@ -4,7 +4,7 @@ import Search from "../../public/svg/Search.js"
 import Time from '../../public/svg/Time.js'
 import Close from '../../public/svg/Close.js'
 
-import styles from '../../styles/Navbar.module.scss'
+import styles from '../../styles/Navbar/SearchBar.module.scss'
 import classNames from 'classnames'
 
 const SearchBar = () => {

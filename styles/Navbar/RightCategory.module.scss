@@ -1,0 +1,305 @@
+@import "../colors";
+@import "../fonts";
+
+@import "./Navbar.module.scss";
+
+.RightCategory {
+    display: flex;
+    flex-direction: row;
+        
+    align-items: center;
+    justify-content: flex-end;
+        
+    height: 100%;
+    width: 20%;
+
+    padding-right: 1rem;
+    gap: 1rem;
+    
+    & .IconContainer {
+        display: flex;
+        justify-content: center;
+
+        height: 40%;
+        padding: .5rem;
+        border-radius: 0.3rem;
+
+        cursor: pointer;
+        
+        transition: background-color 100ms ease;
+
+        &:hover {
+            background-color: $terciary-color;
+        }
+
+        &::after {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: absolute;
+            content: attr(name);
+
+            font-size: $font-size-5;
+            font-weight: 600;
+            color: #000000;
+
+            height: 3rem;
+            width: auto;
+
+            padding-inline: 1rem;
+            background-color: #fff;
+            border-radius: 0.5rem;
+
+            transform: translateY(50%) scale(0, 0);
+
+            transition: transform 250ms ease;
+          }
+
+          &:hover::after {
+              transform: translateY(110%)  scale(1, 1);
+          }
+    }
+    
+    & .Icon {
+        height: 100%;
+    }
+
+    & .GetBits {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        cursor: pointer;
+
+        background-color: $terciary-color;
+
+        height: 3rem;
+        width: 8rem;
+        border-radius: 0.5rem;
+
+        font-size: $font-size-5;
+        font-weight: 700;
+
+        padding-left: 0.4rem;
+        padding-right: 1rem;
+
+        &:hover {
+            background-color: $search-bar;
+        }
+
+        & .Icon {
+            padding: 0;
+            height: 70%;
+        }
+    }
+
+    & .Avatar {
+        object-fit: contain;
+
+        height: 60%;
+        border-radius: 50%;
+    }
+
+
+    & .Dialog {
+        position: absolute;
+        z-index: 100;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 40rem;
+        height: 0;
+        background-color: $primary-color;
+        border-radius: .5rem;
+
+        clip-path: inset(0);
+
+        transform: translate(-47%, 2.5rem);
+
+        transition: height 450ms;
+        transition-timing-function: ease;
+        &.open {
+            height: calc(100vh - 5rem);
+        }
+
+        & .head {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+
+            box-sizing: border-box;
+
+            width: 100%;
+            height: 5rem;
+
+            padding-inline: 1rem;
+            margin: 0;
+            box-shadow: 0 0 0.5rem black;
+
+            & h1 {
+                font-size: calc($font-size-5 + 0.1rem);
+                font-weight: 600;
+                color: $text;
+
+                text-align: center;
+                width: auto;
+
+                margin-inline: auto;
+            }
+
+            & .Icon,
+            & .IconInvisible {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 0.3rem;
+
+                background-position: center;
+
+                padding: .5rem;
+                margin-inline: 0.25rem;
+
+                &:hover {
+                    background-color: $terciary-color;
+                }
+            }
+
+            & .IconInvisible {
+                visibility: hidden;
+            }
+        }
+
+        & .primeLootContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            height: 92.2%;
+            width: 100%;
+            overflow-y: scroll;
+
+            & .lootContainer {
+                height: 38rem;
+                width: 95%;
+
+                box-sizing: border-box;
+
+                border-bottom: 0.1rem solid $search-bar;
+                padding-inline: 2.5rem;
+
+                & h1 {
+                    font-weight: 600;
+                    margin-top: 2rem;
+                }
+
+                & h5,
+                & h3 {
+                    color: $text-subcolor;
+                    font-size: $font-size-5;
+                    font-weight: 400;
+
+                    margin: 0;
+                }
+
+                & h3 {
+                    color: $text;
+                    font-size: calc( $font-size-5 + .05rem );
+                }
+
+                & h5 {
+                    margin-bottom: 2rem;
+                }
+                & .FreeTrial {
+                    width: 100%;
+                    height: 3rem;
+
+                    background-color: $purple-color;
+                    color: $text;
+                    font-size: $font-size-5;
+                    font-weight: 600;
+
+                    cursor: pointer;
+
+                    border: none;
+                    border-radius: 0.4rem;
+                    margin-bottom: 2rem;
+
+                    transition: background-color 150ms ease;
+
+                    &:hover {
+                        background-color: #772ce8;
+                    }
+                }
+            }
+        }
+
+
+
+
+        & .switchTab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            width: 100%;
+            height: $nav-height;
+
+            margin-top: 2rem;
+
+            & .tabText {
+                display: flex;
+                flex-direction: row;
+                justify-content: stretch;
+                align-items: center;
+
+                width: 100%;
+
+                font-size: calc($font-size-5 + 0.1rem);
+
+                & .text {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    width: 50%;
+                    height: 4rem;
+                    background-color: #772ce8;
+
+                    border-bottom: 0.1rem solid $terciary-color;
+
+                    margin: 0;
+
+                    &.Active {
+                        color: #772ce8;
+                        background-color: aqua;
+                        transform: scale(3);
+                        
+                    }
+                }
+
+            }
+
+            & .tabBorder {
+                display: flex;
+                
+                width: 45%;
+                height: 0.2rem;
+                background-color: $text-purple;
+
+                transform: translateY(-100%) translateX(-55%);
+            }
+        }
+    }
+}
+
+
+
+.tabText {
+    & .Fragment {
+        background-color: antiquewhite;
+    }
+}

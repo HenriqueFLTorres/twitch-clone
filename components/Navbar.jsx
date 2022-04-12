@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import SearchBar from './Navbar/SearchBar.jsx'
 import RightCategory from './Navbar/RightCategory.jsx'
 
-import styles from '../styles/Navbar.module.scss'
+import styles from '../styles/Navbar/Navbar.module.scss'
 import LeftCategory from './Navbar/LeftCategory.jsx'
 
 const Navbar = () => {

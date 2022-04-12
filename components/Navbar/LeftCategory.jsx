@@ -5,7 +5,7 @@ import ViewMore from '../../public/data/ViewMore.json'
 import TwitchLogo from "../../public/svg/TwitchLogo.js"
 import MoreOptions from "../../public/svg/MoreOptions.js"
 
-import styles from '../../styles/Navbar.module.scss'
+import styles from '../../styles/Navbar/LeftCategory.module.scss'
 import classNames from 'classnames'
 
 const LeftCategory = () => {

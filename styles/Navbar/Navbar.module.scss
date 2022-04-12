@@ -1,0 +1,19 @@
+@import "../colors";
+@import "../fonts";
+
+$nav-height: 5rem;
+
+
+.Navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+
+    width: 100%;
+    height: $nav-height;
+    background-color: $primary-color;
+    color: #fff;
+
+}
