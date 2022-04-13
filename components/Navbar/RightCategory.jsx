@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import PrimeLoot from '../../public/data/PrimeLoot.json'
 import NotificationsData from '../../public/data/NotificationsData.json'
+import MessagesData from '../../public/data/MessagesData.json'
 
 import Loots from '../../public/svg/Loots.js'
 import Notifications from '../../public/svg/Notifications.js'
@@ -10,14 +11,17 @@ import Messages from '../../public/svg/Messages.js'
 import Close from '../../public/svg/Close'
 import Settings from '../../public/svg/Settings'
 import ReadMessages from '../../public/svg/ReadMessages'
+import Search from '../../public/svg/Search'
 
 import styles from '../../styles/Navbar/RightCategory.module.scss'
 import classNames from 'classnames'
 import Image from 'next/image'
+import UserSettings from './UserSettings'
 
 const RightCategory = () => {
     const [windowOpened, setWindowOpened] = useState()
     const [notificationsTab, setNotificationsTab] = useState("Twitch")
+    const [settings, setSettings] = useState()
 
     const iconContainerClass = (name) => classNames( styles.IconContainer,   { [styles.open]: windowOpened === name } )
 
@@ -51,7 +55,7 @@ const RightCategory = () => {
             <div className={ iconContainerClass("Notifications") } name="Notifications" >
                 <Notifications onClick={() => setWindowOpened("Notifications")} className={styles.Icon} />
 
-                <div className={ classNames( styles.Dialog, { [styles.open]: windowOpened === "Notifications" } )}>
+                <div className={ classNames( styles.SmallerDialog, { [styles.open]: windowOpened === "Notifications" } )}>
                         <div className={styles.head}>
                             <ReadMessages  className={styles.Icon} />
                             <ReadMessages  className={styles.IconInvisible} />
@@ -90,12 +94,42 @@ const RightCategory = () => {
             </div>
             <div className={ iconContainerClass("Messages") } name="Messages" >
                 <Messages onClick={() => setWindowOpened("Messages")} className={styles.Icon} />
+
+                <div className={ classNames( styles.SmallerDialog, { [styles.open]: windowOpened === "Messages" } )}>
+                        <div className={styles.head}>
+                            <ReadMessages  className={styles.IconInvisible} />
+                            <ReadMessages  className={styles.IconInvisible} />
+                            <h1>Whispers</h1>
+                            <Settings className={styles.Icon}/>
+                            <Close className={styles.Icon} onClick={() => setWindowOpened(null)}/>
+                        </div>
+                        <div className={styles.searchBar}>
+                            <Search className={styles.searchIcon}/>
+                            <input type="search" placeholder='Search for People' />
+                        </div>
+                        <div className={styles.mainMessagesContainer}>
+                            { MessagesData.map((item, index) => {
+                                const { image, author, message } = item
+                                return (
+                                    <div className={styles.messagesContainer} key={index}>
+                                        <img src={image} alt="" />
+                                        <div className={styles.Description}>
+                                            <h5>{author}</h5>
+                                            <p>{message}</p>
+                                        </div>
+                                    </div>
+                                )
+                            }) }
+                        </div>
+                </div>
+
             </div>
             <div className={styles.GetBits}>
                 <Bits className={styles.Icon} />
                 <p>Get Bits</p>
             </div>
-            <img src="images/DefaultAvatar.png" alt="Default Avatar" className={styles.Avatar} />
+            <img src="images/DefaultAvatar.png" alt="Default Avatar" className={styles.Avatar} onClick={() => setSettings(!settings)} />
+            { settings ? <UserSettings /> : null }
         </div>
   )
 }
