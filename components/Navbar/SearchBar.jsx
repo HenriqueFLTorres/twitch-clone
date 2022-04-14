@@ -9,7 +9,7 @@ import classNames from 'classnames'
 
 const SearchBar = () => {
     const [search, setSearch] = useState()
-    const [dropDown, setDropDown] = useState(false)
+    const [dropDown, setDropDown] = useState(true)
 
 
   return (
@@ -30,12 +30,16 @@ const SearchBar = () => {
                 <ul className={styles.SearchItem}>
                     <Time className={styles.SearchIcon} />
                     Software & Game Development
-                    <Close className={styles.SearchIcon} />
+                    <div className={styles.IconContainer}>
+                        <Close className={styles.SearchIcon} />
+                    </div>
                 </ul>
                 <ul className={styles.SearchItem}>
                     <Time className={styles.SearchIcon} />
                     Grand Theft Auto V
-                    <Close className={styles.SearchIcon} />
+                    <div className={styles.IconContainer}>
+                        <Close className={styles.SearchIcon} />
+                    </div>
                 </ul>
             </div>
         </div>

@@ -9,7 +9,15 @@
     color: $text;
 
     width: 100%;
-    height: 4.2rem;
+    height: 0px;
+
+    animation-name: show;
+    animation-duration: 250ms;
+    animation-fill-mode: both;
+
+    transition-property: background-color, height, transform, opacity;
+    transition-duration: 250ms;
+    transition-timing-function: ease;
 
     & img {
         width: 3rem;
@@ -77,4 +85,26 @@
             filter: grayscale(100%);
         }
     }
+
+
+
+    &:hover {
+        cursor: pointer;
+
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+
+@keyframes show {
+    from { 
+        height: 0px;
+        transform: translateX(-100%);
+        opacity: 0;
+     }
+    to { 
+        height: 4.2rem;
+        transform: translateX(0%);
+        opacity: 1;
+     }
 }
