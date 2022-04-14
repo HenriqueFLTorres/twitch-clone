@@ -14,6 +14,9 @@
 
     overflow-x: hidden;
     overflow-y: scroll;
+
+    transition: width 150ms ease, height 150ms ease;
+
     & .topHead {
         display: flex;
         align-items: center;
@@ -138,6 +141,8 @@
     border-top: 0.1rem solid rgba($color: #fff, $alpha: 0.2);
 
     transform: translateY( calc(100vh - 10rem) );
+
+    transition: transform 150ms ease;
     & .SearchIcon {
         position: absolute;
 
@@ -192,5 +197,59 @@
 
 
 .SideBar.collapsed {
-    transform: translateX(-80%);
+    width: 5rem;
+    height: calc(100vh - 5rem);
+
+    & .RecommendedChannels,
+    & .showMore {
+        display: none;
+    }
+
+    & .topHead {
+        display: flex;
+        width: 5rem;
+
+        & p {
+            display: none;
+        }
+
+        & .IconContainer {
+    
+            & .Icon {
+                transform: scale(-1);
+            }
+        }
+    }
+
+
+    & .IconCollapse {
+        width: 5rem;
+        height: 5rem;
+
+        fill: $text-subcolor;
+
+        padding-inline: 1.5rem;
+        padding-block: 1rem;
+
+        margin-bottom: -1rem;
+
+        &:last-of-type {
+            margin-top: -1.2rem;
+        }
+
+    }
+
+
+    & div:not(:first-child):not(:nth-child(2)) { 
+        &:hover {
+            background-color: $secondary-color;
+        }
+    }
+
+
+}
+
+
+.SearchFriends.collapsed {
+    transform: translateY( calc(100vh - 10rem) ) translateX(-100%);
 }

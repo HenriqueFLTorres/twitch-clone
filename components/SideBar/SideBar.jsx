@@ -4,6 +4,8 @@ import GenericChannelList from './GenericChannelList'
 
 import Collapse from '../../public/svg/Collapse'
 import Search from '../../public/svg/Search'
+import FollowedChannels from '../../public/svg/FollowedChannels'
+import RecommendedChannels from '../../public/svg/RecommendedChannels'
 
 import styles from '../../styles/SideBar/SideBar.module.scss'
 import classNames from 'classnames'
@@ -20,8 +22,10 @@ const SideBar = () => {
                   <Collapse className={styles.Icon} onClick={() => setCollapse(!collapse) }/>
               </div>
           </div>
+              { collapse ? <FollowedChannels className={styles.IconCollapse} name="Followed Channels" /> : null }
               <GenericChannelList />
               <p className={styles.RecommendedChannels}>RECOMMENDED CHANNELS</p>
+              { collapse ? <RecommendedChannels className={styles.IconCollapse} name="Recommended Channels" /> : null }
               <GenericChannelList />
       </div>
       <div className={ classNames( styles.SearchFriends, { [styles.collapsed]: collapse })}>
