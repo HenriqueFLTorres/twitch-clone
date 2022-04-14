@@ -1,0 +1,73 @@
+@import "../colors";
+@import "../fonts";
+
+
+.SideBar {
+    width: 24rem;
+    height: calc(100vh - 5rem);
+
+    background-color: $secondary-color;
+    box-sizing: border-box;
+
+    & .topHead {
+        display: flex;
+        align-items: center;
+
+        box-sizing: border-box;
+
+        width: 100%;
+        height: 4rem;
+
+        padding: 1rem;
+
+        & p {
+            color: $text;
+            font-size: $font-size-5;
+            font-weight: 600;
+        }
+
+        & .IconContainer {
+            box-sizing: border-box;
+            width: 4rem;
+            height: 4rem;
+
+            margin-left: auto;
+
+            padding: 1rem;
+
+            & .Icon {
+                width: 100%;
+            }
+        }
+    }
+
+    & .showMore {
+        display: flex;
+
+        height: 2.2rem;
+
+        font-size: $font-size-5;
+        color: $text-purple;
+
+        cursor: pointer;
+
+        margin-left: 1rem;
+        &:hover {
+            text-decoration: underline;
+        }
+
+    }
+
+
+
+    & .RecommendedChannels {
+        height: 2rem;
+
+        font-size: $font-size-5;
+        font-weight: 600;
+        color: $text;
+
+        margin-left: 1rem;
+        margin-block: 1rem;
+    }
+}

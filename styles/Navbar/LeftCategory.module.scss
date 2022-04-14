@@ -10,13 +10,13 @@
     justify-content: flex-start;
     
     height: 100%;
-    width: 20%;
+    width: 38.4rem;
 
     gap: 3.5rem;
 
     & .Icon:first-child {
-        height: 80%;
-        margin-left: 1rem;
+        height: 4rem;
+        width: 4rem;
     }
 
     & p {
@@ -45,7 +45,7 @@
         & .IconContainer {
             display: flex;
             justify-content: center;
-            height: 40%;
+            height: 3rem;
 
             padding: .5rem;
             border-radius: 0.3rem;

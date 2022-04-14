@@ -8,12 +8,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 
     position: relative;
 
-    height: 100%;
-    width: 20%;
+    height: 4.6rem;
+    width: 40rem;
 
+    padding: 0.5rem;
 
     & .DropDown {
         display: flex;
@@ -99,12 +101,14 @@
                 outline: none;
     
                 background-color: $search-bar;
-                height: 70%;
+                height: 100%;
                 width: 90%;
+
+                transform: translateY(-0.75rem) translateX(1rem);
             }
     
             & input {
-                height: 70%;
+                height: 100%;
     
                 overflow: visible;
     
@@ -140,7 +144,7 @@
                 justify-content: center;
                 align-items: center;
     
-                width: 10%;
+                width: 3.4rem;
                 background-color: $terciary-color;
     
                 border-radius: 0 .5rem .5rem 0;
@@ -149,7 +153,7 @@
                 transition: 250ms ease background-color;
     
                 & .Icon {
-                    height: 70%;
+                    height: 65%;
 
                     fill: #fff;
                 }

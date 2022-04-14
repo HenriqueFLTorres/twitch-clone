@@ -20,7 +20,9 @@
         display: flex;
         justify-content: center;
 
-        height: 40%;
+        height: 3rem;
+        width: 3rem;
+
         padding: .5rem;
         border-radius: 0.3rem;
 
@@ -62,28 +64,25 @@
     }
     
     & .Icon {
-        height: 100%;
+        height: 2rem;
     }
 
     & .GetBits {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
 
         cursor: pointer;
 
         background-color: $terciary-color;
 
         height: 3rem;
-        width: 8rem;
+        width: 9.5rem;
         border-radius: 0.5rem;
 
         font-size: $font-size-5;
         font-weight: 600;
-
-        padding-left: 0.4rem;
-        padding-right: 1rem;
 
         &:hover {
             background-color: $search-bar;
@@ -91,7 +90,15 @@
 
         & .Icon {
             padding: 0;
-            height: 70%;
+            height: 3rem;
+
+            margin-left: 1rem;
+        }
+
+        & p {
+            width: 100%;
+            margin: 0;
+            margin-left: 0.5rem;
         }
     }
 
@@ -158,8 +165,8 @@
 
             & .Icon,
             & .IconInvisible {
-                width: 2rem;
-                height: 2rem;
+                width: 3rem;
+                height: 3rem;
                 border-radius: 0.3rem;
 
                 background-position: center;

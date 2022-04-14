@@ -9,6 +9,10 @@ body {
   font-size: 10px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 
 ::-webkit-scrollbar {
   width: 1rem;
