@@ -9,19 +9,38 @@ import Volume from '../../public/svg/Volume'
 import style from '../../styles/MainPage/AutoPlayVideo.module.scss'
 import classNames from 'classnames'
 
-const AutoPlayVideo = () => {
+const AutoPlayVideo = ({ position, text }) => {
     const [showAudio, setShowAudio] = useState(false)
     const [volume, setVolume] = useState(50)
 
     let realInputWidth = volume / 100 * 13
 
+
+    let positionClass;
+    switch (position) {
+        case 2: case -3: case 7: positionClass = "farRight"
+            break;
+        case 1: case -4: case 6: positionClass = "right"
+            break;
+        case 0: case -5: case 5: positionClass = "center"
+            break;
+        case -1: case 4: case -6: positionClass = "left"
+            break;
+        case -2: case 3: case -7: positionClass = "farLeft"
+            break;
+        default:
+            break;
+    }
+
+
   return (
-    <div className={style.VideoContainer}>
+    <div className={ classNames( style.VideoContainer, style[positionClass] )}>
         <div className={style.Video}>
             <header>
                 <div className={style.InLive}>LIVE</div>
             </header>
-            Ei recrutador, Nota meu trabalho! :(
+            {text} <br/><br/>
+            Ei recrutador, Nota meu trabalho! :( 
             <footer>
                 <div className={style.LeftControl}  onMouseEnter={() => setShowAudio(true)} onMouseLeave={() => setShowAudio(false)}>
                     <div className={style.IconContainer} name="Play (space/k)">

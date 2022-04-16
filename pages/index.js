@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import AutoPlayVideo from '../components/MainPage/AutoPlayVideo'
+import Carrousel from '../components/MainPage/Carrousel'
 import Navbar from '../components/Navbar'
 import SideBar from '../components/SideBar/SideBar'
 
@@ -12,7 +13,7 @@ export default function Home() {
         <Navbar/>
         <SideBar/>
         <div className={style.PageContent}>
-          <AutoPlayVideo/>
+          <Carrousel/>
         </div>
     </div>
   )
