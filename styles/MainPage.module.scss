@@ -1,0 +1,17 @@
+@import "colors";
+
+.MainBackground {
+    width: 100%;
+    height: 100vh;
+    background-color: $background-color;
+
+    & .PageContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 84.3vw;
+        height: 90vh;
+
+        transform: translateY(2rem) translateX(27rem);
+    }
+}
