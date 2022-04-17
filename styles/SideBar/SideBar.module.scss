@@ -1,7 +1,6 @@
 @import "../colors";
 @import "../fonts";
 
-
 .SideBar {
     position: fixed;
     width: 24rem;
@@ -15,6 +14,7 @@
     overflow-x: hidden;
     overflow-y: scroll;
 
+    transform: translateY(5rem);
     transition: width 150ms ease, height 150ms ease;
 
     & .topHead {
@@ -140,7 +140,8 @@
     background-color: $secondary-color;
     border-top: 0.1rem solid rgba($color: #fff, $alpha: 0.2);
 
-    transform: translateY( calc(100vh - 10rem) );
+
+    transform: translateY( calc(100vh - 5rem) );
 
     transition: transform 150ms ease;
     & .SearchIcon {

@@ -9,7 +9,7 @@ import classNames from 'classnames'
 
 const SearchBar = () => {
     const [search, setSearch] = useState()
-    const [dropDown, setDropDown] = useState(true)
+    const [dropDown, setDropDown] = useState(false)
 
 
   return (
@@ -19,7 +19,7 @@ const SearchBar = () => {
                 placeholder='Search' 
                 type="search" 
                 value={search} 
-                onChange={(e) => setSearch(e.target.value)}
+                // onChange={(e) => setSearch(e.target.value)}
                 onFocus={() => setDropDown(true)}
                 onBlur={() => setDropDown(false)} />
                 <span className={styles.SearchContainer}>

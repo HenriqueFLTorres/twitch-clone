@@ -1,0 +1,78 @@
+@import "../colors";
+@import "../fonts";
+
+
+.Container {
+    width: 100%;
+    height: auto;
+    border: 2px solid pink;
+
+    transform: translateY(5rem);
+    transition: transform 250ms ease, width 250ms ease;
+    & h1 {
+        font-size: calc($font-size-4 + 0.1rem);
+        font-weight: 600;
+        color: $text;
+    }
+
+    & .ChannelList {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 32rem));
+
+        width: 100%;
+        height: auto;
+        border: 2px solid purple;
+
+        & .ChannelDisplayer {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    
+            box-sizing: border-box;
+    
+            width: auto;
+            height: 28rem;
+
+            padding: 0 0.5rem;
+    
+            & .Video {
+                width: 100%;
+                height: 19rem;
+    
+                background-color: $purple-color;
+            }
+    
+            & .ChannelInfo {
+                height: 8rem;
+    
+                border: 2px solid aqua;
+    
+                & img {
+                    width: 4rem;
+                    height: 4rem;
+    
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+.Container.expand {
+    width: 95vw;
+
+    transform: translateX(-5vw) translateY(5rem);
+
+    & .ChannelList {
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(29rem, 30rem));
+
+        gap: 0;
+    }
+}

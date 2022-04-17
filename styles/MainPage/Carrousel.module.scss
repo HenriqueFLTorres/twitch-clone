@@ -8,9 +8,12 @@
     justify-content: center;
 
     width: 100%;
-    height: 40rem;
+    height: 34rem;
     gap: 95%;
 
+    transform: translateY(5rem);
+
+    transition: transform 250ms ease;
     & .iconContainer {
         width: 3.6rem;
         height: 3.6rem;
@@ -36,4 +39,10 @@
             transform: rotate(180deg);
         }
     }
+}
+
+.carrousel.expand {
+    width: 95vw;
+
+    transform:  translateY(5rem) translateX(-5vw);
 }

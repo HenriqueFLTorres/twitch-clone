@@ -5,8 +5,11 @@ import AutoPlayVideo from './AutoPlayVideo'
 import style from '../../styles/MainPage/Carrousel.module.scss'
 import Arrow from '../../public/svg/Arrow'
 
-const Carrousel = () => {
+import classNames from 'classnames'
+
+const Carrousel = ({ collapse }) => {
     const [generalPosition, setGeneralPosition] = useState(0)
+
 
     const checkPosition = (num) => {
         let newNumber = num
@@ -16,10 +19,9 @@ const Carrousel = () => {
         return newNumber
     }
     
-    console.log(generalPosition);
 
   return (
-    <div className={style.carrousel}>
+    <div className={ classNames( style.carrousel, { [style.expand]: collapse } ) }>
         <div className={style.iconContainer} onClick={ ()  => setGeneralPosition( checkPosition( generalPosition + 1 ) ) }>
             <Arrow className={style.ArrowLeft} />
         </div>

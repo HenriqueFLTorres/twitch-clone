@@ -10,16 +10,15 @@ import RecommendedChannels from '../../public/svg/RecommendedChannels'
 import styles from '../../styles/SideBar/SideBar.module.scss'
 import classNames from 'classnames'
 
-const SideBar = () => {
-  const [collapse, setCollapse] = useState(false)
+const SideBar = ({ collapse, setCollapse }) => {
 
   return (
     <>
       <div className={ classNames( styles.SideBar, { [styles.collapsed]: collapse })}>
           <div className={styles.topHead}>
               <p>FOLLOWED CHANNELS</p>
-              <div className={styles.IconContainer} name="Collapse">
-                  <Collapse className={styles.Icon} onClick={() => setCollapse(!collapse) }/>
+              <div className={styles.IconContainer}  onClick={() => setCollapse(!collapse) } name="Collapse">
+                  <Collapse className={styles.Icon}/>
               </div>
           </div>
               { collapse ? <FollowedChannels className={styles.IconCollapse} name="Followed Channels" /> : null }
