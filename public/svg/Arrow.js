@@ -8,7 +8,7 @@ const Arrow = (props) => (
     className="ScIconSVG-sc-1bgeryd-1 hcjcOH"
     {...props}
   >
-    <path d="M6.5 5.5 11 10l-4.5 4.5L8 16l6-6-6-6-1.5 1.5z" fill="#EFEFF1" />
+    <path d="M6.5 5.5 11 10l-4.5 4.5L8 16l6-6-6-6-1.5 1.5z" />
   </svg>
 )
 
