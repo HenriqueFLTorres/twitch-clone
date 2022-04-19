@@ -2,15 +2,16 @@
 
 .MainBackground {
     width: 100%;
-    height: 300vh;
+    height: auto;
     background-color: $background-color;
 
+    padding-bottom: 18rem;
     & .PageContent {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 84.3vw;
-        height: 300vh;
+        height: auto;
 
         transform: translateY(2rem) translateX(27rem);
     }

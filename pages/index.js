@@ -22,9 +22,12 @@ export default function Home() {
         <SideBar collapse={collapse} setCollapse={setCollapse} />
         <div className={style.PageContent}>
           <Carrousel collapse={collapse} />
-          <RecommendedChannels collapse={collapse} />
+          <RecommendedChannels collapse={collapse} title="Live channels we think you’ll like" />
           <Categories collapse={collapse} />
           <CategorySpan collapse={collapse} />
+          <RecommendedChannels collapse={collapse} title="Recommended smaller communities" />
+          <RecommendedChannels collapse={collapse} title="All aboard the Hype Train!" />
+          <RecommendedChannels collapse={collapse} title="Recommended Just Chatting channels" />
         </div>
     </div>
   )

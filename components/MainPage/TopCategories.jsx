@@ -8,10 +8,11 @@ import Esports from '../../public/svg/Esports'
 import Creative from '../../public/svg/Creative'
 
 import style from '../../styles/MainPage/TopCategories.module.scss'
+import classNames from 'classnames'
 
-const CategorySpan = () => {
+const CategorySpan = ({ collapse }) => {
   return (
-    <div className={style.TopCategoriesContainer}>
+    <div className={ classNames( style.TopCategoriesContainer, { [style.expand]: collapse } )}>
         <div className={style.CategorySpan}>
           <h1>Games</h1>
           <Games className={style.Icon} />
