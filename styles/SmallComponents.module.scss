@@ -26,8 +26,8 @@
     user-select: none;
 
     position: absolute;
-    width: 10rem;
-    height: 0rem;
+    width: 0rem;
+    height: auto;
 
     opacity: 0;
 
@@ -41,20 +41,17 @@
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.423);
     background-color: $secondary-color;
 
-    transform-style: preserve-3d;
-    transform-origin: right;
-    transform: translate(-17.5rem, -13.25rem);
-
-    transition-property: transform, width, height, opacity;
-    transition-duration: 350ms;
+    transform: translate(-17.5rem, -11.25rem);
+    transition-property: width, opacity;
+    transition-duration: 250ms;
     transition-timing-function: ease;
 
     &.active {
         opacity: 1;
 
         width: 20rem;
-        height: 10rem;
-        transform: translate(-17.5rem, -13.25rem);
+        height: auto;
+        transform: translate(-17.5rem, -11.25rem);
 
 
         & .option {

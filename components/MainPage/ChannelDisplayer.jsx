@@ -18,7 +18,7 @@ const ChannelDisplayer = () => {
                 <span className={style.tag}>Portuguese</span>
             </div>
             <div className={style.optionsContainer}>
-              <Options/>
+              <Options channel={true}/>
             </div>
         </div>
 

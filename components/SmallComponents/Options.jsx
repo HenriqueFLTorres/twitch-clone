@@ -7,7 +7,7 @@ import Report from '../../public/svg/Report'
 
 import style from '../../styles/SmallComponents.module.scss'
 
-const Options = () => {
+const Options = ({ channel }) => {
     const [open, setOpen] = useState(false)
     // console.log(open);
   return (
@@ -16,13 +16,22 @@ const Options = () => {
             <MoreOptions className={style.Icon} />
         </div>
         <div className={ classNames( style.MenuExpanded, { [style.active]: open }) }>
-            <div className={style.option}>
-                <NotInterested className={style.Icon}/> Not Interested
-            </div>
-            <div className={style.hr}></div>
-            <div className={style.option}>
-                <Report className={style.Icon}/> Report Cool Name
-            </div>
+            { channel ? (
+                <>
+                <div className={style.option}>
+                    <NotInterested className={style.Icon}/> Not Interested
+                </div>
+                <div className={style.hr}></div>
+                <div className={style.option}>
+                    <Report className={style.Icon}/> Report Cool Name
+                </div>
+                </>
+                ) : (
+                <div className={style.option}>
+                    <NotInterested className={style.Icon}/> Not Interested
+                </div>
+                )   
+            }
         </div>
       </>
   )

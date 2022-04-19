@@ -22,7 +22,7 @@ export default function Home() {
         <div className={style.PageContent}>
           <Carrousel collapse={collapse} />
           <RecommendedChannels collapse={collapse} />
-          <Categories />
+          <Categories collapse={collapse} />
         </div>
     </div>
   )
