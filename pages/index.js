@@ -10,6 +10,7 @@ import Navbar from '../components/Navbar'
 import SideBar from '../components/SideBar/SideBar'
 
 import style from '../styles/MainPage.module.scss'
+import Categories from '../components/MainPage/Categories'
 
 export default function Home() {
   const [collapse, setCollapse] = useState(false)
@@ -21,6 +22,7 @@ export default function Home() {
         <div className={style.PageContent}>
           <Carrousel collapse={collapse} />
           <RecommendedChannels collapse={collapse} />
+          <Categories />
         </div>
     </div>
   )

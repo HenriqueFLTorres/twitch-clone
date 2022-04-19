@@ -27,8 +27,8 @@ const RightCategory = () => {
 
   return (
         <div className={styles.RightCategory} >
-            <div className={ iconContainerClass("Loots") } name="Loots" >
-                <Loots onClick={() => setWindowOpened( windowOpened === "Loots" ? "" : "Loots" )} className={styles.Icon} />
+            <div className={ iconContainerClass("Loots") } name="Loots" onClick={() => setWindowOpened( windowOpened === "Loots" ? "" : "Loots" )} >
+                <Loots  className={styles.Icon} />
 
                     <div className={ classNames( styles.Dialog, { [styles.open]: windowOpened === "Loots" } )}>
                         <div className={styles.head}>
@@ -52,8 +52,8 @@ const RightCategory = () => {
                     </div>
 
             </div>
-            <div className={ iconContainerClass("Notifications") } name="Notifications" >
-                <Notifications onClick={() => setWindowOpened("Notifications")} className={styles.Icon} />
+            <div className={ iconContainerClass("Notifications") } name="Notifications" onClick={() => setWindowOpened( windowOpened === "Notifications" ? "" : "Notifications" )} >
+                <Notifications  className={styles.Icon} />
 
                 <div className={ classNames( styles.SmallerDialog, { [styles.open]: windowOpened === "Notifications" } )}>
                         <div className={styles.head}>
@@ -92,8 +92,8 @@ const RightCategory = () => {
                     </div>
 
             </div>
-            <div className={ iconContainerClass("Messages") } name="Messages" >
-                <Messages onClick={() => setWindowOpened("Messages")} className={styles.Icon} />
+            <div className={ iconContainerClass("Messages") } name="Messages"  onClick={() => setWindowOpened( windowOpened === "Messages" ? "" : "Messages")}  >
+                <Messages className={styles.Icon} />
 
                 <div className={ classNames( styles.SmallerDialog, { [styles.open]: windowOpened === "Messages" } )}>
                         <div className={styles.head}>

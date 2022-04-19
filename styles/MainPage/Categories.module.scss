@@ -1,0 +1,19 @@
+@import "../colors";
+@import "../fonts";
+
+
+
+.title {
+    width: 100%;
+
+    font-size: $font-size-4;
+    color: $text;
+
+    margin: 0;
+
+    & span {
+        color: $text-purple;
+    }
+
+    transform: translateY(8rem);
+}

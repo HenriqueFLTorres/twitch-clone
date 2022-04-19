@@ -28,6 +28,7 @@
 
         width: 100%;
         height: 0.1rem;
+        margin-top: 0.5rem;
 
         background-color: rgba($color: #fff, $alpha: 0.1);
         & .ShowMoreContainer {
@@ -87,7 +88,7 @@
         & .ChannelDisplayer {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
     
             box-sizing: border-box;
     
@@ -101,7 +102,8 @@
     
             & .Video {
                 width: 100%;
-                height: 19rem;
+                height: 18rem;
+                margin-bottom: 1rem;
     
                 background-color: $purple-color;
             }
@@ -154,6 +156,10 @@
                         border-radius: 20rem;
                         background-color: rgba($color: #fff, $alpha: 0.15);
                     }
+                }
+
+                & .optionsContainer {
+                    margin-left: auto;
                 }
             }
         }

@@ -1,0 +1,96 @@
+@import "colors";
+@import "fonts";
+
+.Options {
+    width: 2.4rem;
+    height: 2.4rem;
+
+    cursor: pointer;
+
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+
+    transition: background-color 150ms ease;
+    &:hover {
+        background-color: rgba($color: #fff, $alpha: 0.2);
+    }
+}
+
+
+.MenuExpanded {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    user-select: none;
+
+    position: absolute;
+    width: 10rem;
+    height: 0rem;
+
+    opacity: 0;
+
+    animation-name: MenuExpand;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.423);
+    background-color: $secondary-color;
+
+    transform-style: preserve-3d;
+    transform-origin: right;
+    transform: translate(-17.5rem, -13.25rem);
+
+    transition-property: transform, width, height, opacity;
+    transition-duration: 350ms;
+    transition-timing-function: ease;
+
+    &.active {
+        opacity: 1;
+
+        width: 20rem;
+        height: 10rem;
+        transform: translate(-17.5rem, -13.25rem);
+
+
+        & .option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+    
+            width: 18rem;
+            height: 3rem;
+    
+            font-size: 13px;
+            color: $text;
+    
+            padding: 0.5rem;
+            border-radius: 0.3rem;
+    
+            transition: background-color 150ms ease;
+            &:hover {
+                background-color: rgba($color: #fff, $alpha: 0.2);
+            }
+    
+            & .Icon {
+    
+                width: 2rem;
+                height: 2rem;
+    
+                margin-right: 0.5rem;
+            }
+        }
+    
+        & .hr {
+            width: 17rem;
+            height: 1px;
+    
+            background-color: rgba($color: #fff, $alpha: 0.15);
+        }
+    }
+
+}
