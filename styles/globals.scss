@@ -16,10 +16,11 @@ body {
 
 ::-webkit-scrollbar {
   width: 0.75rem;
+  background-color: $secondary-color;
 }
 
 ::-webkit-scrollbar-thumb {
-  opacity: 0;
+  opacity: 1;
 
   background-color: $terciary-color;
   border-radius: 10rem;
@@ -27,9 +28,3 @@ body {
   transition: opacity 250ms ease;
 }
 
-
-::-webkit-scrollbar-track-piece:hover ::-webkit-scrollbar-thumb {
-  opacity: 0;
-  background-color: aqua;
-
-}

@@ -12,13 +12,20 @@ import SideBar from '../components/SideBar/SideBar'
 import style from '../styles/MainPage.module.scss'
 import Categories from '../components/MainPage/Categories'
 import CategorySpan from '../components/MainPage/TopCategories'
+import MadeBy from '../components/SmallComponents/MadeBy'
 
 export default function Home() {
   const [collapse, setCollapse] = useState(false)
 
   return (
     <div className={style.MainBackground}>
+        <Head>
+          <title>Twitch Clone</title>
+          <meta property="og:title" key="title" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/images/Logo.png" />
+        </Head>
         <Navbar />
+        <MadeBy />
         <SideBar collapse={collapse} setCollapse={setCollapse} />
         <div className={style.PageContent}>
           <Carrousel collapse={collapse} />
